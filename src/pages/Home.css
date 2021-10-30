@@ -1,0 +1,6 @@
+.intro-section{
+    background-image: url('../images/intro-image.svg');
+    height: 500px;
+    background-size: cover;
+    width: 100%;
+}
