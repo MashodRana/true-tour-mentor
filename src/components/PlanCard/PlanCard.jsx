@@ -15,7 +15,7 @@ const PlanCard = (props) => {
                 <h4 className="text-xl">{title}</h4>
                 <p className="text-gray-700"><span className="font-bold">Cost:</span> {cost} TK</p>
                 <p className="text-gray-700">Long: {duration}</p>
-                <p className="mt-6 text-center"><Link to={`/confirm-tour/${_id}`} className="border py-1 px-4 m-2 bg-green-700 text-white rounded-md ">Confirm</Link></p>
+                <p className="mt-6 text-center"><Link to={`/confirm-tour/${_id}`} className="border py-1 lg:px-8 md:px-5 m-2 border-red-400 rounded text-red-700 hover:bg-red-400 hover:text-white ">Confirm</Link></p>
             </div>
         </div>
     );

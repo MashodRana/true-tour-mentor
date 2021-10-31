@@ -1,6 +1,10 @@
 .intro-section{
     background-image: url('../images/intro-image.svg');
-    height: 500px;
+    height: 600px;
     background-size: cover;
     width: 100%;
+}
+
+.reason-section img{
+    height: 400px;
 }
