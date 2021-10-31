@@ -9,7 +9,7 @@ const Home = () => {
         const url = "https://shrieking-spider-08076.herokuapp.com/tour-plans"
         fetch(url)
             .then(res => res.json())
-            .then(data => setTourPlans(data.slice(0, 8)))
+            .then(data => setTourPlans(data))
     }, [])
     return (
         <>
@@ -125,7 +125,7 @@ const Home = () => {
                                     <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Starla M.</h2>
                                 </div>
                             </div>
-                            <div class="lg:w-1/3 lg:mb-0 p-4">
+                            \<div class="lg:w-1/3 lg:mb-0 p-4">
                                 <div class="h-full text-center">
                                     <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://image.freepik.com/free-photo/indian-man-simple-white-tee-studio-portrait_53876-102833.jpg" />
                                     <p class="leading-relaxed">Our travel guide Mr Adnan really very skilled and made our planning just as we wanted .though it was a last minute call still he made us availed one decent hotel as per our requirement. Definitely looking forward to plan my next trip with Travel Triangle and of course thanks to Adnan .</p>

@@ -12,10 +12,10 @@ const AddPlan = () => {
     const handlePlanAddition = (evnt) => {
         const title = titleRef.current.value;
         const cost = costRef.current.value;
-        const time = timeRef.current.value;
-        const desc = descRef.current.value;
+        const duration = timeRef.current.value;
+        const description = descRef.current.value;
         const image = imageRef.current.value;
-        const data = {title, cost, time, desc, image};
+        const data = {title, cost, duration, description, image};
         console.log('--------------------------',data);
         fetch('http://localhost:5000/add-plan', {
             method: 'POST',
