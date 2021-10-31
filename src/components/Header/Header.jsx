@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
+    const {user, logOut} = useAuth();
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-purple-500 mb-3">
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -33,9 +35,28 @@ const Header = () => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                            <NavLink to='/hotel-booking' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                                Hotel Booking
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to='/photo-book' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                                Photo Book
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to='/about-us' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                                About Us
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            {user.email && user.displayName}
+                        {
+                            user.email? <button onClick={logOut}>Logout</button>
+                            : <NavLink to='/login' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
                             <i class="far fa-user-circle"></i>&nbsp;Login/Register
-                            </a>
+                            </NavLink>
+                        }
                         </li>
                     </ul>
                 </div>

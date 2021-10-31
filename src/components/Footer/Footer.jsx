@@ -11,7 +11,7 @@ const Footer = () => {
                 
                 <div class="flex flex-col">
                     <h2 className="text-4xl">True Tour Mentor</h2>
-                    <p>A tour planer organization. We prioratize the customer satisfactions.</p>
+                    <p>A tour planer organization. We prioratize the customer satisfactions. You can belive in us that we care about you.</p>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">Footer header 2</span>
