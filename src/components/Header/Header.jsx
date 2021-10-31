@@ -1,78 +1,65 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import './Header.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
     const { user, logOut } = useAuth();
-    return (
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-purple-500 mb-3">
-            <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-                    <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
-                        True Tour Mentor
-                    </a>
-                    <button className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button">
-                        <span className="block relative w-6 h-px rounded-sm bg-white"></span>
-                        <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                        <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                    </button>
-                </div>
-                <div className="lg:flex flex-grow items-center" id="example-navbar-warning">
-                    <ul className="flex flex-col lg:flex-row list-none ml-auto">
-                        <li className="nav-item">
-                            <NavLink to='/home' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                                Home
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-                                Tour Plans
-                            </a>
-                        </li>
+    const userIcon = <FontAwesomeIcon icon={faUserCircle} />
+    return (<>
+        <header class="text-white bg-red-400 body-font">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">True Tour Mentor</span>
+                </a>
+                <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                    <NavLink to='/home' class="mr-5 hover:text-gray-900">
+                        Home
+                    </NavLink>
+                    <NavLink to="/tour-plans" class="mr-5 hover:text-gray-900">Tour Plans</NavLink>
+                    <NavLink to='/hotel-booking' class="mr-5 hover:text-gray-900" >
+                        Hotel Booking
+                    </NavLink>
+                    <NavLink to="/photo-book" class="mr-5 hover:text-gray-900">Photo Book</NavLink>
+                    <NavLink to='/about-us' class="mr-5 hover:text-gray-900">About Us</NavLink>
+                </nav>
 
-                        <li className="nav-item">
-                            <NavLink to='/hotel-booking' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
-                                Hotel Booking
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to='/photo-book' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
-                                Photo Book
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to='/about-us' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
-                                About Us
-                            </NavLink>
-                        </li>
-                        {user.email && <li className="nav-item">
-                            <NavLink to='/my-plans' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                <div class="dropdown inline-block relative">
+                    <button class=" text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+                        <span class="mr-1">{userIcon} {user.email && user.displayName}</span>
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
+                    </button>
+                    <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <li class=""><NavLink to='/add-plan' class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Add Plan</NavLink></li>
+                        {user.email && <li >
+                            <NavLink to='/my-plans' class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
                                 My Plans
                             </NavLink>
                         </li>}
-                        {user.email && <li className="nav-item">
-                            <NavLink to='/manage-all-plans' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                        {user.email && <li >
+                            <NavLink to='/manage-all-plans' class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
                                 Manage All Plans
                             </NavLink>
                         </li>}
-                        {user.email && <li className="nav-item">
-                            <NavLink to='/my-plans' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                               {user.displayName}
-                            </NavLink>
-                        </li>}
-                        <li className="nav-item">
+                        {
+                            user.email ? <li><span
+                                onClick={logOut}
+                                class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            >Logout</span></li>
+                                : <li><NavLink to='/login' class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Login/Register
+                                </NavLink></li>
+                        }
 
-                            {
-                                user.email ? <button onClick={logOut}>Logout</button>
-                                    : <NavLink to='/login' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                                        <i class="far fa-user-circle"></i>&nbsp;Login/Register
-                                    </NavLink>
-                            }
-                        </li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </header>
+    </>
     );
 };
 
