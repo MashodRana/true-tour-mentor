@@ -29,26 +29,32 @@ const Header = () => {
                                 Tour Plans
                             </a>
                         </li>
+                        
                         <li className="nav-item">
-                            <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-                                Holiday Plans
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to='/hotel-booking' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                            <NavLink to='/hotel-booking' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
                                 Hotel Booking
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to='/photo-book' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                            <NavLink to='/photo-book' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
                                 Photo Book
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to='/about-us' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                            <NavLink to='/about-us' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
                                 About Us
                             </NavLink>
                         </li>
+                        {user.email && <li className="nav-item">
+                            <NavLink to='/my-plans' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                My Plans
+                            </NavLink>
+                        </li>}
+                        {user.email && <li className="nav-item">
+                            <NavLink to='/manage-all-plans' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                Manage All Plans
+                            </NavLink>
+                        </li>}
                         <li className="nav-item">
                             {user.email && user.displayName}
                         {

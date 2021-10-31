@@ -1,9 +1,14 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
+import React, { useEffect, useState } from "react";
+import PlanCard from "../components/PlanCard/PlanCard";
 import './Home.css'
 const Home = () => {
-    const {addToStorage} = useLocalStorage();
+    const [tourPlans, setTourPlans] = useState([]);
+    useEffect(()=>{
+        const url = "http://localhost:5000/tour-plans"
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setTourPlans(data.slice(0,8)))
+    },[])
     return (
         <>
             <main>
@@ -15,20 +20,13 @@ const Home = () => {
                     <p className="text-xl">Find your prefereable one</p>
                     <div className="tour-plans">
                         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                            <div>
-                                <div>
-                                    <img src="https://sgp1.digitaloceanspaces.com/cosmosgroup/news/7725621_New%20Project%20(4).jpg" alt="" />
-                                </div>
-                                <div>
-                                    <h4>Saint-Martin</h4>
-                                    <p>Cost: 6000 TK</p>
-                                    <button className="border p-1 m-2" onClick = {()=>addToStorage(1)}>Add Wish List</button>
-                                    <NavLink to='/tour-plan'>
-                                    <button className="border p-1 m-2">View Details</button>
-                                    </NavLink>
-                                </div>
-                            </div>
-                            <div>
+                            {
+                                tourPlans.map(plan=> <PlanCard
+                                key = {plan.id}
+                                plan = {plan}
+                                />)
+                            }
+                            {/* <div>
                                 <div>
                                     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/77/22/14/amiakhum.jpg?w=700&h=500&s=1" alt="" />
                                 </div>
@@ -38,7 +36,7 @@ const Home = () => {
                                     <button className="border p-1 m-2" onClick = {()=>addToStorage(2)}>Add Wish List</button>
                                     <button className="border p-1 m-2">View Details</button>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

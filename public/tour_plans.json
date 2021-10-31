@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Saint Martin",
+        "cost": 6000,
+        "duration": "3 days 2 nights",
+        "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+        "image": "https://sgp1.digitaloceanspaces.com/cosmosgroup/news/1878484_Saint%20Martins%20Island%20Bangladesh.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Bandarban",
+        "cost": 5500,
+        "duration": "3 days 2 nights",
+        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "image": "http://unb.com.bd/filemanager/photos/64/Tazing-Dong.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Sajek Valley",
+        "cost": 5500,
+        "duration": "2 Days - 3 Nights",
+        "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+        "image": "https://avijatrik.org/wp-content/uploads/2019/06/cover22-870x555.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Sundarban",
+        "cost": 8000,
+        "duration": "3 Days - 2 Nights",
+        "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+        "image": "https://media-eng.dhakatribune.com/uploads/2020/09/9-new-project-1599296482873.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Nafakhum",
+        "cost": 7500,
+        "duration": "2 Days - 3 Nights",
+        "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+        "image": "https://avijatrik.org/wp-content/uploads/2019/06/update-cover-jpg.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Tanguar Haor",
+        "cost": 5500,
+        "duration": "2 Days - 3 Nights",
+        "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+        "image": "https://thefinancialexpress.com.bd/uploads/1630034469.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Keokradong ",
+        "cost": 19903,
+        "duration": "2 Days - 3 Nights",
+        "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+        "image": "https://avijatrik.org/wp-content/uploads/2019/06/Keokradong-2.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Srimangal ",
+        "cost": 4500,
+        "duration": "2 Days - 3 Nights",
+        "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
+        "image": "https://nijhoom.com/wp-content/uploads/images/tour_photos/sylhet-srimangal-tours/srimangal-overnight-tour/srimangal-overnight-tour-cover-600x338-gpst.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Rangamati",
+        "cost": 10000,
+        "duration": "2 Days - 3 Nights",
+        "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+        "image": "https://media-eng.dhakatribune.com/uploads/2018/10/web-rangamati-syed-zakir-hossai-1540382280927.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Sylhet",
+        "cost": 9500,
+        "duration": "2 Days - 3 Nights",
+        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "image": "http://unb.com.bd/filemanager/photos/64/Ratargul%20Swamp%20Forest%20Sylhet%20Bangladesh.jpg"
+    }
+]

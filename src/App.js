@@ -6,11 +6,15 @@ import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
 import AboutUs from './pages/AboutUs';
+import ConfirmTour from './pages/ConfirmTour/ConfirmTour';
 import Home from './pages/Home';
 import HotelBooking from './pages/HotelBooking';
 import Login from './pages/Login/Login';
+import NotFound from './pages/NotFound/NotFound';
 import PhotoBook from './pages/PhotoBook';
-import TourPlan from './pages/TourPlan/TourPlan';
+import PlanDetail from './pages/PlanDetail/PlanDetail';
+import ManageAllPlans from './pages/TourPlans/ManageAllPlans';
+import MyPlans from './pages/TourPlans/MyPlans';
 
 function App() {
   return (
@@ -25,8 +29,8 @@ function App() {
             <Route exact path='/home'>
               <Home></Home>
             </Route>
-            <Route exact path='/tour-plan'>
-              <TourPlan></TourPlan>
+            <Route exact path='/plan-detail/:planId'>
+             <PlanDetail></PlanDetail>
             </Route>
             <PrivateRoute exact path='/hotel-booking'>
               <HotelBooking></HotelBooking>
@@ -39,6 +43,18 @@ function App() {
             </Route>
             <Route exact path='/login'>
               <Login></Login>
+            </Route>
+            <PrivateRoute exact path='/confirm-tour/:planId'>
+              <ConfirmTour></ConfirmTour>
+            </PrivateRoute>
+            <PrivateRoute exact path='/my-plans'>
+              <MyPlans></MyPlans>
+            </PrivateRoute>
+            <PrivateRoute exact path='/manage-all-plans'>
+              <ManageAllPlans></ManageAllPlans>
+            </PrivateRoute>
+            <Route path='*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
