@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="container mx-auto grid md:grid-cols-4 gap-4">
                 <div className="col-span-2">
                     <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                        <span class="ml-3 text-xl">True Tour Mentor</span>
+                        <span class="ml-3 text-xl text-red-700">True Tour Mentor</span>
                     </a>
                     <p class="mt-2 w-3/4 text-sm text-gray-500">A tour planer organization. We prioratize the customer satisfactions. You can belive in us that we care about you.</p>
                 </div>
