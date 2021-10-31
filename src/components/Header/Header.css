@@ -1,4 +1,5 @@
 .dropdown:hover .dropdown-menu {
     display: block;
+    margin-left: -50px;
   }
   
