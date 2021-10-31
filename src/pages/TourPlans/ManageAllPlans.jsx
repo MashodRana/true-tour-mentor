@@ -7,7 +7,7 @@ const ManageAllPlans = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `http://localhost:5000/all-orders`;
+        const url = `https://shrieking-spider-08076.herokuapp.com/all-orders`;
         fetch(url)
             .then(res => res.json())
             .then(data => setAllPlans(data))
@@ -16,7 +16,7 @@ const ManageAllPlans = () => {
     const deletePlan = (planId) => {
         const flag = window.confirm("Are you sure you want to cancel your our plan");
         if (flag) {
-            const url = `http://localhost:5000/remove-order/${planId}`;
+            const url = `https://shrieking-spider-08076.herokuapp.com/remove-order/${planId}`;
             fetch(url, {
                 method: 'DELETE',
             })

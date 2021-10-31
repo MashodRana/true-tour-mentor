@@ -17,7 +17,7 @@ const AddPlan = () => {
         const image = imageRef.current.value;
         const data = {title, cost, duration, description, image};
         console.log('--------------------------',data);
-        fetch('http://localhost:5000/add-plan', {
+        fetch('https://shrieking-spider-08076.herokuapp.com/add-plan', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
