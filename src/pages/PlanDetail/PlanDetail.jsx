@@ -8,7 +8,7 @@ const PlanDetail = ()=>{
     const [planDetail, setPlanDetail] = useState([]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/tour-plan-detail/${planId}`;
+        const url = `https://shrieking-spider-08076.herokuapp.com/tour-plan-detail/${planId}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>setPlanDetail(data));

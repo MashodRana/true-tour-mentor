@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBx0jHfWlLFPb9zXoruzPHq2H35L4LAWmk",
-    authDomain: "web-dev-course-3d88f.firebaseapp.com",
-    projectId: "web-dev-course-3d88f",
-    storageBucket: "web-dev-course-3d88f.appspot.com",
-    messagingSenderId: "674667918561",
-    appId: "1:674667918561:web:77a69bf126b9ca76f773a0"
+    apiKey: "AIzaSyC3lZqTonT9VInK_5C8mG3PiH60X4jE1cQ",
+    authDomain: "true-tour-mentor-6bffb.firebaseapp.com",
+    projectId: "true-tour-mentor-6bffb",
+    storageBucket: "true-tour-mentor-6bffb.appspot.com",
+    messagingSenderId: "2422318380",
+    appId: "1:2422318380:web:ddb1e87836979a2d7f7889"
   };
 export default firebaseConfig;  

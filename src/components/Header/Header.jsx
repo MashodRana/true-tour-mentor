@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
-    const {user, logOut} = useAuth();
+    const { user, logOut } = useAuth();
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-purple-500 mb-3">
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -20,16 +20,16 @@ const Header = () => {
                 <div className="lg:flex flex-grow items-center" id="example-navbar-warning">
                     <ul className="flex flex-col lg:flex-row list-none ml-auto">
                         <li className="nav-item">
-                        <NavLink to='/home' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                            Home
-                        </NavLink>
+                            <NavLink to='/home' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                Home
+                            </NavLink>
                         </li>
                         <li className="nav-item">
                             <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
                                 Tour Plans
                             </a>
                         </li>
-                        
+
                         <li className="nav-item">
                             <NavLink to='/hotel-booking' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" >
                                 Hotel Booking
@@ -55,14 +55,19 @@ const Header = () => {
                                 Manage All Plans
                             </NavLink>
                         </li>}
-                        <li className="nav-item">
-                            {user.email && user.displayName}
-                        {
-                            user.email? <button onClick={logOut}>Logout</button>
-                            : <NavLink to='/login' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-                            <i class="far fa-user-circle"></i>&nbsp;Login/Register
+                        {user.email && <li className="nav-item">
+                            <NavLink to='/my-plans' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                               {user.displayName}
                             </NavLink>
-                        }
+                        </li>}
+                        <li className="nav-item">
+
+                            {
+                                user.email ? <button onClick={logOut}>Logout</button>
+                                    : <NavLink to='/login' className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                        <i class="far fa-user-circle"></i>&nbsp;Login/Register
+                                    </NavLink>
+                            }
                         </li>
                     </ul>
                 </div>
