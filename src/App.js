@@ -13,6 +13,7 @@ import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
 import PhotoBook from './pages/PhotoBook';
 import PlanDetail from './pages/PlanDetail/PlanDetail';
+import AddPlan from './pages/TourPlans/AddPlan';
 import ManageAllPlans from './pages/TourPlans/ManageAllPlans';
 import MyPlans from './pages/TourPlans/MyPlans';
 
@@ -52,6 +53,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute exact path='/manage-all-plans'>
               <ManageAllPlans></ManageAllPlans>
+            </PrivateRoute>
+            <PrivateRoute exact path='/add-plan'>
+              <AddPlan></AddPlan>
             </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
