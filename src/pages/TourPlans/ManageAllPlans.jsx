@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../hooks/useAuth";
 
 const ManageAllPlans = () => {
-  const [allPlans, setAllPlans] = useState(null);
+  const [allPlans, setAllPlans] = useState([]);
   const [message, setMessage] = useState(null);
-  const { user } = useAuth();
 
   useEffect(() => {
     const url = `https://shrieking-spider-08076.herokuapp.com/all-orders`;
@@ -50,7 +49,7 @@ const ManageAllPlans = () => {
         <h1 className="text-3xl mb-8">Manage All Plans</h1>
         <div>
           <div class="grid md:grid-cols-3 grid-cols-1 lg:gap-6 md:gap-4">
-            {allPlans ? (
+            {allPlans.length!==0 ? (
               allPlans.map((plan) => (
                 <>
                   <div className="shadow-md p-4">
@@ -84,7 +83,7 @@ const ManageAllPlans = () => {
                 </>
               ))
             ) : (
-              <p>There are no plans.</p>
+              <p className="text-3xl text-yellow-600">There are no plans.</p>
             )}
           </div>
         </div>

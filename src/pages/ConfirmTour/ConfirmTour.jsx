@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 const ConfirmTour = () => {
   const { planId } = useParams();
   const [planDetail, setPlanDetail] = useState([]);
-  const [confirmationMsg, setConfirmationMsg] = useState(null);
+  // const [confirmationMsg, setConfirmationMsg] = useState(null);
 
   const { user } = useAuth();
   const phoneRef = useRef();

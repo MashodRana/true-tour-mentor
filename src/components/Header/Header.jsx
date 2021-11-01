@@ -8,6 +8,12 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const { user, logOut } = useAuth();
     const userIcon = <FontAwesomeIcon icon={faUserCircle} />
+    const activeStyle = {
+        fontWeight: 'bold',
+        color: 'black',
+        marginRight:'10px',
+        marginLeft: '10px'
+    }
     return (<>
         <header class="text-white bg-red-400 body-font">
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -15,15 +21,14 @@ const Header = () => {
                     <span class="ml-3 text-xl">True Tour Mentor</span>
                 </NavLink>
                 <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-                    <NavLink to='/home' class="mr-5 hover:text-gray-900">
+                    <NavLink to='/home' activeStyle={activeStyle} class="mr-5 hover:text-gray-900">
                         Home
                     </NavLink>
-                    <NavLink to="/tour-plans" class="mr-5 hover:text-gray-900">Tour Plans</NavLink>
-                    <NavLink to='/hotel-booking' class="mr-5 hover:text-gray-900" >
+                    {/* <NavLink to='/hotel-booking' class="mr-5 hover:text-gray-900" >
                         Hotel Booking
-                    </NavLink>
-                    <NavLink to="/photo-book" class="mr-5 hover:text-gray-900">Photo Book</NavLink>
-                    <NavLink to='/about-us' class="mr-5 hover:text-gray-900">About Us</NavLink>
+                    </NavLink> */}
+                    {/* <NavLink to="/photo-book" class="mr-5 hover:text-gray-900">Photo Book</NavLink> */}
+                    <NavLink to='/about-us' activeStyle={activeStyle} class="mr-5 hover:text-gray-900">About Us</NavLink>
                 </nav>
 
                 <div class="dropdown inline-block relative">

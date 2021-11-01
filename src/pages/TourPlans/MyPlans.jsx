@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const MyPlans = () => {
     const { user } = useAuth();
-    const [myPlans, setMyPlans] = useState(null);
+    const [myPlans, setMyPlans] = useState([]);
     const [message, setMessage] = useState(null);
 
     useEffect(() => {
@@ -32,22 +31,46 @@ const MyPlans = () => {
         
     }
     return (
+        <main className="container lg:w-11/12 mx-auto">
+      <section className="my-16">
+        <h1 className="text-3xl mb-8">My Plans</h1>
         <div>
-            {
-                myPlans ? myPlans.map(plan => <div>
+          <div class="grid md:grid-cols-3 grid-cols-1 lg:gap-6 md:gap-4">
+            {myPlans.length!==0 ? (
+              myPlans.map((plan) => (
+                <>
+                  <div className="shadow-md p-4">
                     <h4 className="text-xl">{plan.title}</h4>
-                    <p>Status: {plan.orderStatus}</p>
-                    <p>Number of People: {plan.numPeople}</p>
-                    <p>Prefered Date: {plan.prefDate}</p>
-                    <p>Cost: {plan.cost}</p>
-                    <p>Total Cost: {plan.cost * plan.numPeople}</p>
-                    <div>
-                        <button className="border p-2" onClick={() => deletePlan(plan._id)}>Cancel Plan</button>
+                    <p className="text-gray-400 text-sm">
+                      Number of People: {plan.numPeople}
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      Prefered Date: {plan.prefDate}
+                    </p>
+                    <p className="text-gray-400 text-sm">Cost: {plan.cost}</p>
+                    <p className="text-gray-400 text-sm">
+                      Total Cost: {plan.cost * plan.numPeople}
+                    </p>
+                    <p className="text-gray-400 text-sm">Status: <span className="bg-yellow-300 rounded border text-black">{plan.orderStatus}</span></p>
+                    <div className="mt-6">
+                      
+                      <button
+                        className="py-1 px-2 rounded border border-red-400 text-red-400 hover:bg-red-400 hover:text-white"
+                        onClick={() => deletePlan(plan._id)}
+                      >
+                        Cancel Plan
+                      </button>
                     </div>
-                </div>)
-                    : <p>There are no plans.</p>
-            }
+                  </div>
+                </>
+              ))
+            ) : (
+              <p className="text-3xl bg-red-100 p-2 rounded">There are no plans.</p>
+            )}
+          </div>
         </div>
+      </section>
+    </main>
     );
 };
 

@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import { Link} from "react-router-dom";
+// import useLocalStorage from "../../hooks/useLocalStorage";
 import './PlanCard.css'
 
 const PlanCard = (props) => {
     const { title, image, cost, duration, _id } = props.plan;
-    const { addToStorage } = useLocalStorage();
+    // const { addToStorage } = useLocalStorage();
     return (
         <div className="tour-plan">
             <div className="text-center" >
