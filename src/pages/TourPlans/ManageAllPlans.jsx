@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 
 const ManageAllPlans = () => {
   const [allPlans, setAllPlans] = useState([]);
-  const [message, setMessage] = useState(null);
 
   useEffect(() => {
     const url = `https://shrieking-spider-08076.herokuapp.com/all-orders`;
@@ -25,14 +24,13 @@ const ManageAllPlans = () => {
         .then((data) => {
           const newPlans = allPlans.filter((plan) => plan._id !== planId);
           setAllPlans(newPlans);
-          setMessage(data.message);
-          alert(message);
+          alert(data.message);
         });
     }
   };
 
   const processPlan = (id)=>{
-      const url = `http://localhost:5000/update-order-status/${id}`;
+      const url = `https://shrieking-spider-08076.herokuapp.com/update-order-status/${id}`;
       fetch(url, {
           method:'PUT'
       })
