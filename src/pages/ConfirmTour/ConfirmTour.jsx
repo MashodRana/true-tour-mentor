@@ -47,7 +47,14 @@ const ConfirmTour = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => setConfirmationMsg(data.message));
+      .then((data) => {
+        alert(data.message);
+        phoneRef.current.value = "";
+        addressRef.current.value = "";
+        dateRef.current.value = "";
+        numPeopleRef.current.value = "";
+
+      });
     evnt.preventDefault();
   };
   return (
@@ -75,7 +82,9 @@ const ConfirmTour = () => {
           Please Provide your details information to confirm the tour.
         </h2>
         <div class=" flex items-center text-lg">
-          <form action="" class="p-10 md:w-2/3 lg:w-1/2 mx-auto rounded">
+          <form
+            onSubmit={handleTourConfirmation}
+            class="p-10 md:w-2/3 lg:w-1/2 mx-auto rounded">
             <div class="shadow">
               <div class="flex items-center bg-red-400 rounded-t-lg border-white-500 border-b">
                 <label
@@ -92,10 +101,10 @@ const ConfirmTour = () => {
                   class=
                   "flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden"
                 >
-                    {user.displayName}
+                  {user.displayName}
                 </label>
               </div>
-              <div class="flex items-center bg-red-400 rounded-t-lg border-white-500 border-b">
+              <div class="flex items-center bg-red-400 border-white-500 border-b">
                 <label
                   for="name"
                   class="w-20 text-right mr-8 p-4 text-purple-200"
@@ -110,10 +119,10 @@ const ConfirmTour = () => {
                   class=
                   "flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden"
                 >
-                    {user.email}
+                  {user.email}
                 </label>
               </div>
-              <div class="flex items-center bg-red-400 rounded-t-lg border-white-500 border-b">
+              <div class="flex items-center bg-red-400 border-white-500 border-b">
                 <label
                   for="name"
                   class="w-20 text-right mr-8 p-4 text-purple-200"
@@ -121,7 +130,9 @@ const ConfirmTour = () => {
                   Phone
                 </label>
                 <input
-                  type="text"
+                  required
+                  ref={phoneRef}
+                  type="number"
                   name="name"
                   id="name"
                   placeholder="Put in your Phone"
@@ -129,7 +140,7 @@ const ConfirmTour = () => {
                   "flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden"
                 />
               </div>
-              <div class="flex items-center bg-red-400 rounded-t-lg border-white-500 border-b">
+              <div class="flex items-center bg-red-400 border-white-500 border-b">
                 <label
                   for="name"
                   class="w-20 text-right mr-8 p-4 text-purple-200"
@@ -137,6 +148,8 @@ const ConfirmTour = () => {
                   Address
                 </label>
                 <input
+                  required
+                  ref={addressRef}
                   type="text"
                   name="name"
                   id="name"
@@ -145,7 +158,7 @@ const ConfirmTour = () => {
                   "flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden"
                 />
               </div>
-              <div class="flex items-center bg-red-400 rounded-t-lg border-white-500 border-b">
+              <div class="flex items-center bg-red-400 border-white-500 border-b">
                 <label
                   for="name"
                   class="w-20 text-right mr-8 p-4 text-purple-200"
@@ -153,7 +166,9 @@ const ConfirmTour = () => {
                   Person
                 </label>
                 <input
-                  type="text"
+                  required
+                  ref={numPeopleRef}
+                  type="number"
                   name="name"
                   id="name"
                   placeholder="How many people will join the tour."
@@ -161,7 +176,7 @@ const ConfirmTour = () => {
                   "flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden"
                 />
               </div>
-              
+
               <div class="flex items-center bg-red-400  rounded-b-lg border-purple-500 mb-10">
                 <label
                   for="twitter"
@@ -170,6 +185,8 @@ const ConfirmTour = () => {
                   Prefered Date
                 </label>
                 <input
+                  required
+                  ref={dateRef}
                   type="date"
                   name="twitter"
                   id="twitter"
@@ -179,77 +196,14 @@ const ConfirmTour = () => {
               </div>
 
             </div>
-            <button class="bg-pink-400 block w-full rounded py-4 text-white font-bold shadow">
-              Submit
-            </button>
+            <input
+              class="bg-green-400 block w-full rounded py-4 text-white font-bold shadow cursor-pointer"
+              type="submit"
+              value="Submit"
+            />
           </form>
         </div>
       </section>
-      {/* <section className="mt-8">
-        <h2 className="text-2xl">
-          Please Provide your details information to confirm the tour.
-        </h2>
-        <div className="py-6">
-          <form onSubmit={handleTourConfirmation}>
-            <div className="py-1">
-              <label className="text-xl mr-4" htmlFor="">
-                Name:
-              </label>
-              <label className="text-xl "></label>
-            </div>
-            <div className="py-1">
-              <label className="text-xl mr-4">Email: </label>
-              <label className="text-xl">{user.email}</label>
-            </div>
-            <div className="py-1">
-              <label className="text-lg mr-4">Phone:</label>
-              <input
-                className="border border-red-400 rounded"
-                type="number"
-                ref={phoneRef}
-                placeholder="01756565656"
-              />
-            </div>
-            <div className="py-1">
-              <label className="text-lg mr-4">Address</label>
-              <input
-                className="border border-red-400 rounded"
-                type="text"
-                ref={addressRef}
-                placeholder="your address"
-              />
-            </div>
-            <div className="py-1">
-              <label className="text-lg mr-4">Number of people:</label>
-              <input
-                className="border border-red-400 rounded"
-                type="number"
-                ref={numPeopleRef}
-              />
-            </div>
-            <div className="py-1">
-              <label className="text-lg mr-4">Prefered date:</label>
-              <input
-                className="border border-red-400 rounded"
-                type="date"
-                ref={dateRef}
-                name=""
-                id=""
-              />
-            </div>
-
-            <div className="py-1">
-              <input type="submit" value="Submit" />
-            </div>
-          </form>
-
-          {confirmationMsg && (
-            <div>
-              <h3 className="text-2xl">{confirmationMsg}</h3>
-            </div>
-          )}
-        </div>
-      </section> */}
     </main>
   );
 };
